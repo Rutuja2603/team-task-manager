@@ -97,8 +97,8 @@ router.get('/projects', authRequired, async (req, res) => {
   res.json(rows);
 });
 
-router.post('/projects', authRequired, adminOnly, async (req, res) => {
-  const { name, description } = req.body;
+router.post('/projects', authRequired, async (req, res) => {
+    const { name, description } = req.body;
   if (!name) return res.status(400).json({ error: 'Project name required' });
 
   const { rows } = await pool.query(
