@@ -385,18 +385,17 @@ export const ProjectDetails = () => {
             <p className="text-gray-500 text-sm mt-1">{data.project.description}</p>
           )}
         </div>
-        {isAdmin && (
-          <div className="flex gap-2">
-            <button onClick={() => setShowMemberModal(true)}
-              className="border border-gray-300 px-3 py-1.5 rounded text-sm hover:bg-gray-50">
-              + Add Member
-            </button>
-            <button onClick={() => setShowTaskModal(true)}
-              className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm font-medium hover:bg-blue-700">
-              + Add Task
-            </button>
-          </div>
-        )}
+        <div className="flex gap-2">
+  <button onClick={() => setShowMemberModal(true)}
+    className="border border-gray-300 px-3 py-1.5 rounded text-sm hover:bg-gray-50">
+    + Add Member
+  </button>
+
+  <button onClick={() => setShowTaskModal(true)}
+    className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm font-medium hover:bg-blue-700">
+    + Add Task
+  </button>
+</div>
       </div>
 
       {/* Members row */}
