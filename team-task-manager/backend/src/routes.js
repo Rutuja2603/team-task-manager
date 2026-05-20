@@ -179,8 +179,7 @@ router.get('/tasks/all', authRequired, adminOnly, async (req, res) => {
   res.json(rows);
 });
 
-router.post('/tasks', authRequired, adminOnly, async (req, res) => {
-  const { title, description, project_id, assigned_to, priority, due_date } = req.body;
+router.post('/tasks', authRequired, async (req, res) => {  const { title, description, project_id, assigned_to, priority, due_date } = req.body;
   const { rows } = await pool.query(
     `INSERT INTO tasks (title, description, project_id, assigned_to, priority, due_date, created_by)
      VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
