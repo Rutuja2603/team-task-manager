@@ -243,12 +243,10 @@ export const Projects = () => {
     <Layout>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Projects</h1>
-        {user?.role === 'admin' && (
-          <button onClick={() => setShowModal(true)}
-            className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700">
-            + New Project
-          </button>
-        )}
+        <button onClick={() => setShowModal(true)}
+  className="bg-blue-600 text-white px-4 py-2 rounded text-sm font-medium hover:bg-blue-700">
+  + New Project
+</button>
       </div>
 
       {projects.length === 0 ? (
